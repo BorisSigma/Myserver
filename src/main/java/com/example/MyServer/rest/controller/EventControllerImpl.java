@@ -1,12 +1,14 @@
 package com.example.MyServer.rest.controller;
 
-import com.example.MyServer.Service.EventService;
+import com.example.MyServer.service.EventService;
 import com.example.MyServer.domain.Event;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-@RequiredArgsConstructor
+@AllArgsConstructor
 @RestController
 public class EventControllerImpl implements EventController{
     private final EventService eventService;

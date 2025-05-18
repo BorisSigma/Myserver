@@ -1,12 +1,13 @@
 package com.example.MyServer.domain;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor(force = true)
 @Table(name = "users")
 public class User {
     @Id

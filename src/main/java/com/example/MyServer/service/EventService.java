@@ -1,4 +1,4 @@
-package com.example.MyServer.Service;
+package com.example.MyServer.service;
 
 import com.example.MyServer.domain.Event;
 

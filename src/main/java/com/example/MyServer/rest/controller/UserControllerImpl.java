@@ -1,11 +1,18 @@
 package com.example.MyServer.rest.controller;
 
-import com.example.MyServer.Service.UserService;
+import com.example.MyServer.service.UserService;
 import com.example.MyServer.domain.User;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+
+@AllArgsConstructor
+@RestController
+@Service
 public class UserControllerImpl implements UserController{
     private UserService userService;
 
