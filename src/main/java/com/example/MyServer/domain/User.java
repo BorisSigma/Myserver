@@ -18,7 +18,7 @@ public class User {
     @Column(name = "city")
     private final String city;
     @Column(name = "starsValue")
-    private final double starsValue;
+    private final double starsValue = 5.0;
     @Column(name = "username")
     private final String username;
     @Column(name = "password")

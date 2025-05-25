@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MyServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyServerApplication.class, args).getBean(UserController.class).addUser(User.builder().login("login").city("Vjcrd").password("123").starsValue(5.0).build());
+		SpringApplication.run(MyServerApplication.class, args);
 	}
 
 }

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 @AllArgsConstructor
 @RestController
-@Service
 public class UserControllerImpl implements UserController{
     private UserService userService;
 
@@ -48,7 +47,7 @@ public class UserControllerImpl implements UserController{
     }
 
     @Override
-    @GetMapping(path = "/user/{login}")
+    @GetMapping(path = "/user/login/{login}")
     public User getUserByLogin(@PathVariable(name = "login") String login) {
         return userService.getUserByLogin(login);
     }

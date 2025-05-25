@@ -29,6 +29,6 @@ public class Event {
     @Column(name = "eventUsername")
     private final String eventUsername;
     @Column(name = "event_stars_value")
-    private final double event_stars_value;
+    private final double event_stars_value = 5.0;
 
 }
