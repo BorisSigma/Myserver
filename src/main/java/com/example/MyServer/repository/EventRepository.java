@@ -8,5 +8,6 @@ import java.util.ArrayList;
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
     ArrayList<Event> getEventsByCategory(String category);
+    Event getEventByEventLocation(String eventLocation);
 
 }

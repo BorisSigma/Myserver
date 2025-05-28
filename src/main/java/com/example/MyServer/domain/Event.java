@@ -13,9 +13,9 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final long id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Client.class, cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Client client;
     @Column(name = "eventName")
     private final String eventName;
     @Column(name = "eventDescription")
@@ -29,6 +29,8 @@ public class Event {
     @Column(name = "eventUsername")
     private final String eventUsername;
     @Column(name = "event_stars_value")
-    private final double event_stars_value = 5.0;
+    private double event_stars_value = 5.0;
+    @Column(name = "event_time")
+    private final String event_time;
 
 }

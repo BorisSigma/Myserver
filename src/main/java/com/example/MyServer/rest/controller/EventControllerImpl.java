@@ -3,8 +3,6 @@ package com.example.MyServer.rest.controller;
 import com.example.MyServer.service.EventService;
 import com.example.MyServer.domain.Event;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,7 +23,7 @@ public class EventControllerImpl implements EventController{
     public ArrayList<Event> getAllEvents() {
         return eventService.getAllEvents();
     }
-    @GetMapping(path = "/event/{category}")
+    @GetMapping(path = "/event/cat/{category}")
     public ArrayList<Event> getEventsByCategory(@PathVariable(name = "category") String category){
         return eventService.getEventsByCategory(category);
 
@@ -39,6 +37,7 @@ public class EventControllerImpl implements EventController{
     @Override
     @PostMapping(path = "/event")
     public Event addEvent(@RequestBody Event event) {
+        System.out.println(event.toString());
         return eventService.addEvent(event);
     }
 
@@ -48,4 +47,11 @@ public class EventControllerImpl implements EventController{
         eventService.deleteEventById(id);
 
     }
+    @GetMapping(path = "/event/loc/{eventLocation}")
+    @Override
+    public Event getEventByLatLng(String eventLocation) {
+        return eventService.getEventByEventLocation(eventLocation);
+    }
+
+
 }

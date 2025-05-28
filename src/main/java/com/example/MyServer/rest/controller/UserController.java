@@ -1,16 +1,16 @@
 package com.example.MyServer.rest.controller;
 
 
-import com.example.MyServer.domain.User;
+import com.example.MyServer.domain.Client;
 
 import java.util.ArrayList;
 
 public interface UserController {
-    User getById(long id);
-    ArrayList<User> getAllUsers();
-    User updateUser(User user);
-    User addUser(User user);
+    Client getById(long id);
+    ArrayList<Client> getAllUsers();
+    Client updateUser(Client user);
+    Client addUser(Client user);
     void deleteUserById(long id);
-    User getUserByLogin(String login);
+    Client getUserByLogin(String login);
         
 }

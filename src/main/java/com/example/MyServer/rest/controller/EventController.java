@@ -11,4 +11,5 @@ public interface EventController {
     Event addEvent(Event event);
     ArrayList<Event> getEventsByCategory(String category);
     void deleteEventById(long id);
+    Event getEventByLatLng(String eventLocation);
 }

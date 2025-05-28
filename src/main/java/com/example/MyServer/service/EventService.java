@@ -11,4 +11,5 @@ public interface EventService {
     Event addEvent(Event event);
     void deleteEventById(long id);
     ArrayList<Event> getEventsByCategory(String category);
+    Event getEventByEventLocation(String eventLocation);
 }

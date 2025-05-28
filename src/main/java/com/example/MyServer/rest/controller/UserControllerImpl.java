@@ -1,10 +1,8 @@
 package com.example.MyServer.rest.controller;
 
 import com.example.MyServer.service.UserService;
-import com.example.MyServer.domain.User;
+import com.example.MyServer.domain.Client;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,25 +15,25 @@ public class UserControllerImpl implements UserController{
 
     @Override
     @GetMapping(path = "/user/{id}")
-    public User getById(@PathVariable(name = "id") long id) {
+    public Client getById(@PathVariable(name = "id") long id) {
         return userService.getById(id);
     }
 
     @Override
     @GetMapping(path = "/user")
-    public ArrayList<User> getAllUsers() {
+    public ArrayList<Client> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @Override
     @PutMapping(path = "/user")
-    public User updateUser(@RequestBody User user) {
+    public Client updateUser(@RequestBody Client user) {
         return userService.updateUser(user);
     }
 
     @Override
     @PostMapping(path = "/user")
-    public User addUser(@RequestBody User user) {
+    public Client addUser(@RequestBody Client user) {
         return userService.addUser(user);
     }
 
@@ -48,7 +46,7 @@ public class UserControllerImpl implements UserController{
 
     @Override
     @GetMapping(path = "/user/login/{login}")
-    public User getUserByLogin(@PathVariable(name = "login") String login) {
+    public Client getUserByLogin(@PathVariable(name = "login") String login) {
         return userService.getUserByLogin(login);
     }
 }

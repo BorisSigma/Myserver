@@ -61,4 +61,12 @@ public class EventServiceImpl implements EventService{
     public ArrayList<Event> getEventsByCategory(String category) {
         return eventRepository.getEventsByCategory(category);
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Event getEventByEventLocation(String eventLocation) {
+        return eventRepository.getEventByEventLocation(eventLocation);
+    }
+
+
 }
