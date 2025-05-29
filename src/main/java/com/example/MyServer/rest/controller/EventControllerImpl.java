@@ -49,7 +49,7 @@ public class EventControllerImpl implements EventController{
     }
     @GetMapping(path = "/event/loc/{eventLocation}")
     @Override
-    public Event getEventByLatLng(String eventLocation) {
+    public Event getEventByLatLng(@PathVariable(name = "eventLocation") String eventLocation) {
         return eventService.getEventByEventLocation(eventLocation);
     }
 

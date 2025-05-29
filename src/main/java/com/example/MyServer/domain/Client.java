@@ -1,5 +1,6 @@
 package com.example.MyServer.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Table(name = "users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +20,7 @@ public class Client {
     @Column(name = "city")
     private final String city;
     @Column(name = "starsValue")
-    private final double starsValue = 5.0;
+    private final double starsValue;
     @Column(name = "username")
     private final String username;
     @Column(name = "password")
